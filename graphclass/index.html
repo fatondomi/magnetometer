@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Graph Class</title>
+    <script src="graphClass.js"></script>
+    
+    <style>
+        #div1
+        {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+
+    <script>
+        let somePoints = [[0,0],[1,1],[-1,1],[-1,-1],[1,-1]];
+        //              Graph(divId,pointsArray,drawCords)
+        let graph = new Graph("div1",somePoints,true);
+
+        let cDiv = document.getElementById("div1");
+        cDiv.addEventListener("wheel",function(){graph.onWheel(event);});
+        cDiv.addEventListener("mousemove",function(){graph.onMouseMove(event);});
+        cDiv.addEventListener("mousedown",function(){graph.onMouseDown();});
+        cDiv.addEventListener("mouseup",function(){graph.onMouseUp();});
+        cDiv.addEventListener("mouseenter",function(){graph.onMouseEnter();});
+        window.addEventListener("resize",function(){graph.onResize();});
+
+        /*
+            use the above addEventListeners or add the code below to the opening div tag 
+            onwheel="graph.onWheel(event);"
+            onmousemove="graph.onMouseMove(event);"
+            onmousedown="graph.onMouseDown();"
+            onmouseup="graph.onMouseUp();"
+            onmouseenter="graph.onMouseEnter();"
+            onmouseleave="graph.onMouseLeave();"
+        */
+        
+        graph.callBackDrawing(
+            function () {
+                let c = document.getElementById("div1Canvas");
+                let ctx = c.getContext("2d");
+
+                let fP = graph.convert([0.8,1.2]);
+                let sP = graph.convert([1.2,0.8]);
+                ctx.strokeStyle = "black";
+                ctx.beginPath();
+                ctx.rect(fP[0],fP[1],sP[0]-fP[0],sP[1]-fP[1]);
+                ctx.stroke();
+            }
+        );
+    </script>
+</body>
+
+</html>
