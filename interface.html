@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magnetometer</title>
+        <script src="resources/socket.io.js"></script>
+        <script src="resources/graphClass.js"></script>
+        <script src="resources/interfaceFun.js"></script>
+        <link rel="stylesheet" href="resources/interfaceStyle.css">
+    </head>
+    <body>
+        <h3 class="label" id="mxLabel">Multiply X</h3>
+        <input class="inputBox" type="number" value="1" id="multiplyXInput"> 
+        <h3 class="label" id="myLabel">Multiply Y</h3>
+        <input class="inputBox" type="number" value="10" id="multiplyYInput">
+
+        <h3 class="label">Sample Size</h3>
+        <input class="inputBox" type="number" value="50" id="sampleSizeInput">
+        
+        <h3 class="label" id="consoleLabel">Console</h3>
+        <input class="inputBox" type="text" id="consoleBox">
+        <input type="button" value="SEND" id="sendBtn">
+        
+        <div id="chartDiv">
+        </div>
+
+        <script src="resources/addListeners.js"></script>
+    </body>
+</html>

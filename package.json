@@ -1,0 +1,29 @@
+{
+  "name": "magnetometer",
+  "version": "1.0.0",
+  "description": "mangentometer api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatondomi/magnetometer"
+  },
+  "keywords": [
+    "scope",
+    "magnet",
+    "field",
+    "data",
+    "api"
+  ],
+  "author": "Faton Domi",
+  "license": "ISC",
+  "devDependencies": {
+    "socket.io": "^2.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/fatondomi/magnetometer/issues"
+  },
+  "homepage": "https://github.com/fatondomi/magnetometer#readme"
+}
